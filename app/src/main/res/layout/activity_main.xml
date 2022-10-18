@@ -4,15 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/cornsilk"
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:paddingTop="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgView1"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cat_with_butterfly"
+                app:srcCompat="@drawable/pic_1" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/imgView2"
+                android:layout_width="111dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/betta_fish"
+                app:srcCompat="@drawable/pic_2" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/imgView3"
+                android:layout_width="103dp"
+                android:layout_height="112dp"
+                android:contentDescription="@string/pug_with_glasses"
+                app:srcCompat="@drawable/pic_3" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgView4"
+                android:layout_width="171dp"
+                android:layout_height="99dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/golden_retriever"
+                app:srcCompat="@drawable/pic_4"
+                tools:ignore="ImageContrastCheck" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/imgView5"
+                android:layout_width="163dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/cat_and_dog"
+                app:srcCompat="@drawable/pic_5" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <TextView
+            android:id="@+id/landingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center|center_horizontal"
+            android:text="@string/bring_your_treat_for_your_pets_to_the_next_level_with_us"
+            android:textColor="@color/pine_tree"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:id="@+id/landingSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:text="@string/your_pets_will_thank_you_to_you_because_every_treat_is_matter_for_their_wellness_and_activity_what_are_you_waiting_for_start_exploring_by_clicking_the_button_below"
+            android:textColor="#2E7D32"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="96dp" />
+
+        <Button
+            android:id="@+id/btnGetStarted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_corner_radius"
+            android:backgroundTint="@color/dark_olive_green"
+            android:text="@string/get_started"
+            android:textAllCaps="false"
+            android:textColor="@color/cornsilk"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
