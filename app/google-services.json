@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "957947411675",
+    "project_id": "uts-cutiepaw-mobileprogramming",
+    "storage_bucket": "uts-cutiepaw-mobileprogramming.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957947411675:android:bb91c2f2154a985ce660fe",
+        "android_client_info": {
+          "package_name": "com.kelompoktiga.cutiepaw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957947411675-c1rf4o59srdrgh93t29jvg9rrmuitq70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kelompoktiga.cutiepaw",
+            "certificate_hash": "ceffdf8bdbe027fc75cab5089a7d54d5d351dfce"
+          }
+        },
+        {
+          "client_id": "957947411675-23mvdr4rakp6ot35rml98anau6bodmri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFPsmmHjBPTSYBSSyFIX2ZHeAAwgTg6FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957947411675-23mvdr4rakp6ot35rml98anau6bodmri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
