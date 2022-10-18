@@ -4,25 +4,25 @@ A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignm
 ## Features To-Do List
 - [x] Splash Screen
 - [] Login
-  - [] EditText Email and Password
-  - [] Button Login (validate empty state and email format)
-  - [] Button Cancel (exit apps)
-  - [] Button Clear (clear EditText and set cursor to Email EditText)
+  - EditText Email and Password
+  - Button Login (validate empty state and email format)
+  - Button Cancel (exit apps)
+  - Button Clear (clear EditText and set cursor to Email EditText)
 - [] Register
-  - [] EditText Email and Password
-  - [] Button Register (validate empty state and email format)
-  - [] Button Back (back to login page)
-  - [] Button Clear (clear EditText and set cursor to Email EditText)
+  - EditText Email and Password
+  - Button Register (validate empty state and email format)
+  - Button Back (back to login page)
+  - Button Clear (clear EditText and set cursor to Email EditText)
 - [] News Home
-  - [] Use Layout GridView
-  - [] Display news: Title, Image, Headline, and Date
+  - Use Layout GridView
+  - Display news: Title, Image, Headline, and Date
 - [] News Detail
-  - [] Display news: Title, Image, Content, and Date
+  - Display news: Title, Image, Content, and Date
 - [] Contact
-  - [] TextView
-  - [] ImageView
-  - [] Button Phone
-  - [] Button Email
+  - TextView
+  - ImageView
+  - Button Phone
+  - Button Email
 
 ## Tech stack
 - Kotlin
