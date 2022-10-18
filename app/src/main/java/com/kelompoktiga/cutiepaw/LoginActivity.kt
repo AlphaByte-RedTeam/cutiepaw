@@ -75,8 +75,7 @@ class LoginActivity : AppCompatActivity() {
         val fontWeightSpan = StyleSpan(R.font.inter_bold)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                val sendIntent: Intent = Intent(this@LoginActivity, RegisActivity::class.java)
-                startActivity(sendIntent)
+                toRegis()
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -105,6 +104,11 @@ class LoginActivity : AppCompatActivity() {
 
         tvFooter.text = spannableString
         tvFooter.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun toRegis() {
+        val sendIntent: Intent = Intent(this@LoginActivity, RegisActivity::class.java)
+        startActivity(sendIntent)
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {
