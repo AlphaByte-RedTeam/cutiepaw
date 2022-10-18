@@ -3,7 +3,7 @@ A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignm
 
 ## Features To-Do List
 - [x] Splash Screen
-- [] Login
+- [x] Login
   - EditText Email and Password
   - Button Login (validate empty state and email format)
   - Button Cancel (exit apps)
