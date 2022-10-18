@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlin.system.exitProcess
 
 class LoginActivity : AppCompatActivity() {
     private val etEmail: EditText by lazy { findViewById(R.id.etEmailLogin) }
@@ -49,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
         cancelButton.setOnClickListener {
             finish()
-            System.exit(0)
+            exitProcess(0)
         }
 
         loginButton.setOnClickListener {
