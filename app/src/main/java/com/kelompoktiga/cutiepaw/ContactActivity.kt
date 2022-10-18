@@ -12,10 +12,25 @@ class ContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact)
 
+        val phone: Button = findViewById(R.id.btnPhone)
         val email: Button = findViewById(R.id.btnMail)
+
+        phone.setOnClickListener() {
+            makePhoneCall()
+        }
 
         email.setOnClickListener() {
             sendEmail()
+        }
+    }
+
+    private fun makePhoneCall() {
+        val phoneNum: String = "+6287788895099"
+        val phoneCallIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNum"))
+        try {
+            startActivity(phoneCallIntent)
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
         }
     }
 
