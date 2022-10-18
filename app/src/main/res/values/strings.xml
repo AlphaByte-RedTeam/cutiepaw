@@ -3,4 +3,12 @@
     <string name="contact_us">Contact us</string>
     <string name="phone">Phone</string>
     <string name="mail">Mail</string>
+    <string name="cat_with_butterfly">cat_with_butterfly</string>
+    <string name="betta_fish">betta_fish</string>
+    <string name="golden_retriever">golden_retriever</string>
+    <string name="pug_with_glasses">pug_with_glasses</string>
+    <string name="cat_and_dog">cat_and_dog</string>
+    <string name="bring_your_treat_for_your_pets_to_the_next_level_with_us">Bring Your Treat For Your Pets To The Next Level With Us</string>
+    <string name="your_pets_will_thank_you_to_you_because_every_treat_is_matter_for_their_wellness_and_activity_what_are_you_waiting_for_start_exploring_by_clicking_the_button_below">Your pets will thank you to you because every treat is matter for their wellness and activity. What are you waiting for? Start exploring by clicking the button below</string>
+    <string name="get_started">Get started</string>
 </resources>
