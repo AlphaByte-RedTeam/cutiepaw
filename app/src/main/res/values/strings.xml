@@ -11,4 +11,9 @@
     <string name="bring_your_treat_for_your_pets_to_the_next_level_with_us">Bring Your Treat For Your Pets To The Next Level With Us</string>
     <string name="your_pets_will_thank_you_to_you_because_every_treat_is_matter_for_their_wellness_and_activity_what_are_you_waiting_for_start_exploring_by_clicking_the_button_below">Your pets will thank you to you because every treat is matter for their wellness and activity. What are you waiting for? Start exploring by clicking the button below</string>
     <string name="get_started">Get started</string>
+    <string name="hi_welcome_back">Hi, welcome back 👋</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_register">Don’t have an account? Register</string>
 </resources>
