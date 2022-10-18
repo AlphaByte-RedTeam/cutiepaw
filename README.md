@@ -8,7 +8,7 @@ A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignm
   - Button Login (validate empty state and email format)
   - Button Cancel (exit apps)
   - Button Clear (clear EditText and set cursor to Email EditText)
-- [] Register
+- [x] Register
   - EditText Email and Password
   - Button Register (validate empty state and email format)
   - Button Back (back to login page)
