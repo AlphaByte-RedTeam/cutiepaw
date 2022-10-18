@@ -18,7 +18,7 @@ A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignm
   - Display news: Title, Image, Headline, and Date
 - [] News Detail
   - Display news: Title, Image, Content, and Date
-- [] Contact
+- [x] Contact
   - TextView
   - ImageView
   - Button Phone
