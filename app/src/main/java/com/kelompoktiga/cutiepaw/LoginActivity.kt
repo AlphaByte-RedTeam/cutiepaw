@@ -1,7 +1,6 @@
 package com.kelompoktiga.cutiepaw
 
 import android.content.Intent
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
@@ -15,19 +14,32 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
     val email: EditText by lazy { findViewById(R.id.etEmailLogin) }
     val password: EditText by lazy { findViewById(R.id.etPasswordLogin) }
 
+    private lateinit var emailText: String
+    private lateinit var passwordText: String
+
+    // Init Firebase Auth instance
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         val tvFooter: TextView = findViewById(R.id.txtFooterLogin)
-        val clearButton: Button = findViewById(R.id.btnClear)
+        val clearButton: Button = findViewById(R.id.btnClearLogin)
         val cancelButton: Button = findViewById(R.id.btnCancel)
         val loginButton: Button = findViewById(R.id.btnLogin)
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
         clearButton.setOnClickListener() {
             clearForm()
@@ -37,6 +49,25 @@ class LoginActivity : AppCompatActivity() {
         cancelButton.setOnClickListener() {
             finish()
             System.exit(0)
+        }
+
+        loginButton.setOnClickListener() {
+            emailText = email.text.toString()
+            passwordText = password.text.toString()
+
+            if (emailText.isEmpty() || passwordText.isEmpty())
+                Snackbar.make(it, "Email dan Password tidak boleh kosong", Snackbar.LENGTH_SHORT).show()
+            else {
+               auth.signInWithEmailAndPassword(emailText, passwordText)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            val user = auth.currentUser
+                            updateUI(user)
+                        } else {
+                            Snackbar.make(it, "Email atau Password salah", Snackbar.LENGTH_SHORT).show()
+                        }
+                    }
+            }
         }
 
         val foregroundColorSpan: ForegroundColorSpan = ForegroundColorSpan(getColor(R.color.pine_tree))
@@ -74,6 +105,25 @@ class LoginActivity : AppCompatActivity() {
 
         tvFooter.text = spannableString
         tvFooter.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun updateUI(currentUser: FirebaseUser?) {
+        if (currentUser != null) {
+            val sendIntent = Intent(this@LoginActivity, CatalogueActivity::class.java)
+            startActivity(sendIntent)
+        }
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly
+        val currentUser = auth.currentUser
+        if (currentUser != null)
+            reload()
+    }
+
+    private fun reload() {
+        TODO("Not yet implemented")
     }
 
     private fun clearForm() {
