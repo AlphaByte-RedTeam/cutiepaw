@@ -121,7 +121,7 @@
             android:fontFamily="@font/inter_regular"
             android:gravity="center|center_horizontal"
             android:text="@string/don_t_have_an_account_register"
-            android:textColor="@color/dark_sea_green"
+            android:textColor="@color/russian_green"
             android:textSize="12sp"
             tools:ignore="TextContrastCheck" />
 
