@@ -2,7 +2,7 @@
 A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignment in Mobile Programming Subject. <br />
 
 ## Features To-Do List
-- [] Splash Screen
+- [x] Splash Screen
 - [] Login
   - [] EditText Email and Password
   - [] Button Login (validate empty state and email format)
