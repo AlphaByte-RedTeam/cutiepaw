@@ -23,9 +23,9 @@ import com.google.firebase.ktx.Firebase
 
 class RegisActivity : AppCompatActivity() {
 
-    val etName: EditText by lazy { findViewById(R.id.etNameRegis) }
-    val etEmail: EditText by lazy { findViewById(R.id.etEmailRegis) }
-    val etPassword: EditText by lazy { findViewById(R.id.etPasswordRegis) }
+    private val etName: EditText by lazy { findViewById(R.id.etNameRegis) }
+    private val etEmail: EditText by lazy { findViewById(R.id.etEmailRegis) }
+    private val etPassword: EditText by lazy { findViewById(R.id.etPasswordRegis) }
 
     private lateinit var name: String
     private lateinit var email: String

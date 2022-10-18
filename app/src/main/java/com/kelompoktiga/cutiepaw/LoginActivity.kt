@@ -21,8 +21,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
-    val email: EditText by lazy { findViewById(R.id.etEmailLogin) }
-    val password: EditText by lazy { findViewById(R.id.etPasswordLogin) }
+    private val etEmail: EditText by lazy { findViewById(R.id.etEmailLogin) }
+    private val etPassword: EditText by lazy { findViewById(R.id.etPasswordLogin) }
 
     private lateinit var emailText: String
     private lateinit var passwordText: String
@@ -53,8 +53,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener {
-            emailText = email.text.toString()
-            passwordText = password.text.toString()
+            emailText = etEmail.text.toString()
+            passwordText = etPassword.text.toString()
 
             if (emailText.isEmpty() || passwordText.isEmpty())
                 Snackbar.make(it, "Email dan Password tidak boleh kosong", Snackbar.LENGTH_SHORT).show()
