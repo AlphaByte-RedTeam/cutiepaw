@@ -42,7 +42,7 @@ class ContactActivity : AppCompatActivity() {
         val sendEmailIntent = Intent(Intent.ACTION_SENDTO)
         sendEmailIntent.setData(Uri.parse(sendTo))
         try {
-            startActivity(Intent.createChooser(sendEmailIntent, "Sending email..."))
+            startActivity(Intent.createChooser(sendEmailIntent, "Choose email client..."))
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(this, "Error sending email...", Toast.LENGTH_SHORT).show()
