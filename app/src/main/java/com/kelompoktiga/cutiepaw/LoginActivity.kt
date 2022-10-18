@@ -24,8 +24,8 @@ class LoginActivity : AppCompatActivity() {
     private val etEmail: EditText by lazy { findViewById(R.id.etEmailLogin) }
     private val etPassword: EditText by lazy { findViewById(R.id.etPasswordLogin) }
 
-    private lateinit var emailText: String
-    private lateinit var passwordText: String
+    private lateinit var email: String
+    private lateinit var password: String
 
     // Init Firebase Auth instance
     private lateinit var auth: FirebaseAuth
@@ -53,13 +53,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener {
-            emailText = etEmail.text.toString()
-            passwordText = etPassword.text.toString()
+            email = etEmail.text.toString()
+            password = etPassword.text.toString()
 
-            if (emailText.isEmpty() || passwordText.isEmpty())
+            if (email.isEmpty() || password.isEmpty())
                 Snackbar.make(it, "Email dan Password tidak boleh kosong", Snackbar.LENGTH_SHORT).show()
             else {
-               auth.signInWithEmailAndPassword(emailText, passwordText)
+               auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             val user = auth.currentUser
