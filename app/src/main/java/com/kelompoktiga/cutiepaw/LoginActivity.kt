@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
         val fontWeightSpan = StyleSpan(R.font.inter_bold)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                val sendIntent: Intent = Intent(this@LoginActivity, CatalogueActivity::class.java)
+                val sendIntent: Intent = Intent(this@LoginActivity, RegisActivity::class.java)
                 startActivity(sendIntent)
             }
 
