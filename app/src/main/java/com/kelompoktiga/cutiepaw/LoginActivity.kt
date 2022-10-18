@@ -42,17 +42,17 @@ class LoginActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        clearButton.setOnClickListener() {
+        clearButton.setOnClickListener {
             clearForm()
             focusToEmail()
         }
 
-        cancelButton.setOnClickListener() {
+        cancelButton.setOnClickListener {
             finish()
             System.exit(0)
         }
 
-        loginButton.setOnClickListener() {
+        loginButton.setOnClickListener {
             emailText = email.text.toString()
             passwordText = password.text.toString()
 

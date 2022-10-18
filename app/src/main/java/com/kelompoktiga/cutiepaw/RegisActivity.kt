@@ -46,16 +46,16 @@ class RegisActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        clearButton.setOnClickListener() {
+        clearButton.setOnClickListener {
             clearForm()
             focusToName()
         }
 
-        backButton.setOnClickListener() {
+        backButton.setOnClickListener {
             toLogin()
         }
 
-        registerButton.setOnClickListener() {
+        registerButton.setOnClickListener {
             name = etName.text.toString()
             email = etEmail.text.toString()
             password = etPassword.text.toString()
