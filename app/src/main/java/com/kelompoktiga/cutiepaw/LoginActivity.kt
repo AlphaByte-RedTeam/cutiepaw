@@ -128,6 +128,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun reload() {
+        
     }
 
     private fun clearForm() {

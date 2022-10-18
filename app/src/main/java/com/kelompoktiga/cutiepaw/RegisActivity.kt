@@ -152,7 +152,7 @@ class RegisActivity : AppCompatActivity() {
     }
 
     private fun reload() {
-        TODO("Not yet implemented")
+
     }
 
     companion object {
