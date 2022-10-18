@@ -132,12 +132,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun clearForm() {
-        email.text.clear()
-        password.text.clear()
+        etEmail.text.clear()
+        etPassword.text.clear()
     }
 
     private fun focusToEmail() {
-        email.focusable = View.FOCUSABLE
-        email.requestFocus()
+        etEmail.focusable = View.FOCUSABLE
+        etPassword.requestFocus()
     }
 }
