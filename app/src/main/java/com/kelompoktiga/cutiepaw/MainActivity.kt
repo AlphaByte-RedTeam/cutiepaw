@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val getStarted: Button = findViewById(R.id.btnGetStarted)
 
         getStarted.setOnClickListener {
-            val sendIntent = Intent(this, RegisActivity::class.java)
+            val sendIntent = Intent(this, LoginActivity::class.java)
             startActivity(sendIntent)
         }
     }
