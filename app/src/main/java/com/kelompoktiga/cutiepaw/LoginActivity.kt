@@ -12,14 +12,32 @@ import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class LoginActivity : AppCompatActivity() {
+    val email: EditText by lazy { findViewById(R.id.etEmailLogin) }
+    val password: EditText by lazy { findViewById(R.id.etPasswordLogin) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         val tvFooter: TextView = findViewById(R.id.txtFooterLogin)
+        val clearButton: Button = findViewById(R.id.btnClear)
+        val cancelButton: Button = findViewById(R.id.btnCancel)
+        val loginButton: Button = findViewById(R.id.btnLogin)
+
+        clearButton.setOnClickListener() {
+            clearForm()
+            focusToEmail()
+        }
+
+        cancelButton.setOnClickListener() {
+            finish()
+            System.exit(0)
+        }
 
         val foregroundColorSpan: ForegroundColorSpan = ForegroundColorSpan(getColor(R.color.pine_tree))
         val spannableString: SpannableString = SpannableString(tvFooter.text.toString())
@@ -56,5 +74,15 @@ class LoginActivity : AppCompatActivity() {
 
         tvFooter.text = spannableString
         tvFooter.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun clearForm() {
+        email.text.clear()
+        password.text.clear()
+    }
+
+    private fun focusToEmail() {
+        email.focusable = View.FOCUSABLE
+        email.requestFocus()
     }
 }
