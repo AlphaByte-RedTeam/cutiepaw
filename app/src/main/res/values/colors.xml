@@ -15,4 +15,5 @@
     <color name="dark_olive_green">#606C38</color>
     <color name="pine_tree">#283618</color>
     <color name="eerie_black">#1D1E1D</color>
+    <color name="transparent">#00000000</color>
 </resources>
