@@ -13,10 +13,10 @@ A simple pet food catalog apps built with Kotlin to fulfill the mid-exam assignm
   - Button Register (validate empty state and email format)
   - Button Back (back to login page)
   - Button Clear (clear EditText and set cursor to Email EditText)
-- [] News Home
+- [] Item List
   - Use Layout GridView
   - Display news: Title, Image, Headline, and Date
-- [] News Detail
+- [] Items Detail
   - Display news: Title, Image, Content, and Date
 - [x] Contact
   - TextView
