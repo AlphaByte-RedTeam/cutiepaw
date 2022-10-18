@@ -128,7 +128,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun reload() {
-        TODO("Not yet implemented")
     }
 
     private fun clearForm() {
