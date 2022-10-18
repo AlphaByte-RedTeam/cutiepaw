@@ -80,8 +80,8 @@ class RegisActivity : AppCompatActivity() {
             }
         }
 
-        val foregroundColorSpan: ForegroundColorSpan = ForegroundColorSpan(getColor(R.color.pine_tree))
-        val spannableString: SpannableString = SpannableString(tvFooter.text.toString())
+        val foregroundColorSpan = ForegroundColorSpan(getColor(R.color.pine_tree))
+        val spannableString = SpannableString(tvFooter.text.toString())
         val fontWeightSpan = StyleSpan(R.font.inter_bold)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
@@ -128,7 +128,7 @@ class RegisActivity : AppCompatActivity() {
     }
 
     private fun toLogin() {
-        val sendIntent: Intent = Intent(this@RegisActivity, LoginActivity::class.java)
+        val sendIntent = Intent(this@RegisActivity, LoginActivity::class.java)
         startActivity(sendIntent)
     }
 
