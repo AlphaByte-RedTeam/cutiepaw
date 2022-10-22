@@ -23,4 +23,8 @@
     <string name="back">Back</string>
     <string name="register">Register</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="hi">Hi,</string>
+    <string name="rp">Rp</string>
+    <string name="pawly_dog_food_dqp">Pawly - Dog Food DQP</string>
+    <string name="pet_food">pet food</string>
 </resources>
