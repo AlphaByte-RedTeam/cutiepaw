@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cornsilk"
     android:orientation="vertical"
-    tools:context=".CatalogueActivity" >
+    tools:context=".CatalogueActivity">
 
     <TextView
         android:id="@+id/greetingMsg"
@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="44dp"
+        android:text="@string/hi_welcome_back"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/hi"
         android:textColor="@color/eerie_black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,5 +28,7 @@
         android:layout_margin="5dp"
         android:horizontalSpacing="9dp"
         android:numColumns="2"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp"
         android:verticalSpacing="9dp" />
 </LinearLayout>
