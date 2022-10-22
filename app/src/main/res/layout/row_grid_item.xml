@@ -21,6 +21,8 @@
             android:layout_gravity="center_horizontal"
             android:adjustViewBounds="true"
             android:contentDescription="@string/pet_food"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"
             android:paddingHorizontal="8dp"
             android:scaleType="fitXY"
             android:src="@drawable/pet_food" />
