@@ -1,6 +1,7 @@
 package com.kelompoktiga.cutiepaw
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -42,6 +43,14 @@ class CatalogueActivity : AppCompatActivity() {
         customAdapter = CustomAdapter(myProductList, this)
 
         gridView.adapter = customAdapter
+
+        gridView.setOnItemClickListener { _, _, i, _ -> toDetail(i) }
+    }
+
+    private fun toDetail(itemIndex: Int) {
+        val sendIntent = Intent(this, DetailsActivity::class.java)
+        sendIntent.putExtra("itemIndex", itemIndex)
+        startActivity(sendIntent)
     }
 
     class CustomAdapter(
