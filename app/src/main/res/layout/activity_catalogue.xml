@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="44dp"
-        android:text="@string/hi_welcome_back"
+        android:text="@string/hi"
         android:fontFamily="@font/inter_bold"
         android:textColor="@color/eerie_black"
         android:textSize="24sp"
