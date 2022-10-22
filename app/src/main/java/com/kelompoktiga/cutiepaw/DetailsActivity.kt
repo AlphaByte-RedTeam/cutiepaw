@@ -1,7 +1,10 @@
 package com.kelompoktiga.cutiepaw
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
+import android.widget.TextView
 
 class DetailsActivity : AppCompatActivity() {
     companion object {
@@ -11,5 +14,23 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        val itemIndex = intent.getIntExtra(ITEM_INDEX, -1)
+        
+        val productName = findViewById<TextView>(R.id.txtProductName)
+        val productPrice = findViewById<TextView>(R.id.txtProductPrice)
+        val productDesc = findViewById<TextView>(R.id.txtProductDesc)
+        val productImg = findViewById<ImageButton>(R.id.btnBack)
+
+        productName.text = productsList[itemIndex].name
+
+        productPrice.text = productsList[itemIndex].price
+
+        productDesc.text = productsList[itemIndex].desc
+
+        productImg.setOnClickListener {
+            val sendIntent = Intent(this, CatalogueActivity::class.java)
+            startActivity(sendIntent)
+        }
     }
 }
