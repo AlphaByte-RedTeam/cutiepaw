@@ -59,7 +59,7 @@ class CatalogueActivity : AppCompatActivity() {
         ): BaseAdapter() {
 
         override fun getCount(): Int {
-            TODO("Not yet implemented")
+            return imgList.size
         }
 
         override fun getItem(position: Int): Any {
