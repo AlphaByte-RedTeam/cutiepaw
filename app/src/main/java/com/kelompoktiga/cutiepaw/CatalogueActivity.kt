@@ -37,7 +37,7 @@ class CatalogueActivity : AppCompatActivity() {
 
     private fun toDetail(itemIndex: Int) {
         val sendIntent = Intent(this, DetailsActivity::class.java)
-        sendIntent.putExtra("itemIndex", itemIndex)
+        sendIntent.putExtra(DetailsActivity.ITEM_INDEX, itemIndex)
         startActivity(sendIntent)
     }
 
