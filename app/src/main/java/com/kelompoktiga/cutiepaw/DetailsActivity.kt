@@ -16,11 +16,17 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_details)
 
         val itemIndex = intent.getIntExtra(ITEM_INDEX, -1)
-        
+
+        val backArrow = findViewById<ImageButton>(R.id.btnBack)
+
         val productName = findViewById<TextView>(R.id.txtProductName)
         val productPrice = findViewById<TextView>(R.id.txtProductPrice)
         val productDesc = findViewById<TextView>(R.id.txtProductDesc)
-        val productImg = findViewById<ImageButton>(R.id.btnBack)
+
+        backArrow.setOnClickListener {
+            val sendIntent = Intent(this, CatalogueActivity::class.java)
+            startActivity(sendIntent)
+        }
 
         productName.text = productsList[itemIndex].name
 
@@ -28,9 +34,5 @@ class DetailsActivity : AppCompatActivity() {
 
         productDesc.text = productsList[itemIndex].desc
 
-        productImg.setOnClickListener {
-            val sendIntent = Intent(this, CatalogueActivity::class.java)
-            startActivity(sendIntent)
-        }
     }
 }
