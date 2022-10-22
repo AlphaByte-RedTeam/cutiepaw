@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 
 class DetailsActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class DetailsActivity : AppCompatActivity() {
         val productName = findViewById<TextView>(R.id.txtProductName)
         val productPrice = findViewById<TextView>(R.id.txtProductPrice)
         val productDesc = findViewById<TextView>(R.id.txtProductDesc)
+        val productImg = findViewById<ImageView>(R.id.imgProduct)
 
         backArrow.setOnClickListener {
             val sendIntent = Intent(this, CatalogueActivity::class.java)
@@ -34,5 +36,6 @@ class DetailsActivity : AppCompatActivity() {
 
         productDesc.text = productsList[itemIndex].desc
 
+        productImg.setImageResource(productsList[itemIndex].img)
     }
 }
