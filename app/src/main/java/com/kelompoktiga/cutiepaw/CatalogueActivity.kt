@@ -31,12 +31,13 @@ class CatalogueActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         val currentUser = auth.currentUser
+        val name: String = auth.currentUser!!.displayName.toString()
 
         if (currentUser == null) {
             toLogin()
         }
 
-        greeting.text = auth.currentUser!!.displayName
+        greeting.text = "Hi, $name 👋"
 
         for (product in productsList) {
             myProductList.add(product)
