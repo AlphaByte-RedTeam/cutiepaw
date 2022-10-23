@@ -73,7 +73,7 @@ class RegisActivity : AppCompatActivity() {
                             updateUI(user, name)
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:falure", task.exception)
+                            Log.w(TAG, "createUserWithEmail:failure", task.exception)
                             Snackbar.make(it, "Authentication failed.", Snackbar.LENGTH_SHORT)
                                 .show()
                             updateUI(null, null)
