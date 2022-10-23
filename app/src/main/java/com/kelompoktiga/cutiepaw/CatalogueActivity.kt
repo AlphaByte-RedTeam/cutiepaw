@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -28,6 +29,7 @@ class CatalogueActivity : AppCompatActivity() {
 
         val greeting: TextView = findViewById(R.id.greetingMsg)
         val gridView: GridView = findViewById(R.id.gridView)
+        val contactUs: ImageButton = findViewById(R.id.contactUs)
 
         auth = Firebase.auth
         val currentUser = auth.currentUser
@@ -38,6 +40,11 @@ class CatalogueActivity : AppCompatActivity() {
         }
 
         greeting.text = "Hi, $name 👋"
+
+        contactUs.setOnClickListener{
+            val sendIntent = Intent(this, ContactActivity::class.java)
+            startActivity(sendIntent)
+        }
 
         for (product in productsList) {
             myProductList.add(product)
