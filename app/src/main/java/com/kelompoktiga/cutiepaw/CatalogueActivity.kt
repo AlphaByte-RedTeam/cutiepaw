@@ -11,11 +11,16 @@ import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class CatalogueActivity : AppCompatActivity() {
     private var myProductList = ArrayList<Product>()
 
     private var customAdapter: CustomAdapter? = null
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +28,15 @@ class CatalogueActivity : AppCompatActivity() {
 
         val greeting: TextView = findViewById(R.id.greetingMsg)
         val gridView: GridView = findViewById(R.id.gridView)
+
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+
+        if (currentUser == null) {
+            toLogin()
+        }
+
+        greeting.text = auth.currentUser!!.displayName
 
         for (product in productsList) {
             myProductList.add(product)
@@ -33,6 +47,11 @@ class CatalogueActivity : AppCompatActivity() {
         gridView.adapter = customAdapter
 
         gridView.setOnItemClickListener { _, _, i, _ -> toDetail(i) }
+    }
+
+    private fun toLogin() {
+        val sendIntent = Intent(this, LoginActivity::class.java)
+        startActivity(sendIntent)
     }
 
     private fun toDetail(itemIndex: Int) {
