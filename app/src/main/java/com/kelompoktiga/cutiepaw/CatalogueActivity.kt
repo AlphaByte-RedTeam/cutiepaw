@@ -1,6 +1,7 @@
 package com.kelompoktiga.cutiepaw
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,18 +13,6 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class CatalogueActivity : AppCompatActivity() {
-
-    private val productsList = arrayOf(
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-        Product(R.drawable.pet_food, "Pawly - Dog Food DQP", "Rp 99.999"),
-    )
-
     private var myProductList = ArrayList<Product>()
 
     private var customAdapter: CustomAdapter? = null
@@ -42,15 +31,23 @@ class CatalogueActivity : AppCompatActivity() {
         customAdapter = CustomAdapter(myProductList, this)
 
         gridView.adapter = customAdapter
+
+        gridView.setOnItemClickListener { _, _, i, _ -> toDetail(i) }
+    }
+
+    private fun toDetail(itemIndex: Int) {
+        val sendIntent = Intent(this, DetailsActivity::class.java)
+        sendIntent.putExtra(DetailsActivity.ITEM_INDEX, itemIndex)
+        startActivity(sendIntent)
     }
 
     class CustomAdapter(
         private var imgList: ArrayList<Product>,
         var context: Context
-        ): BaseAdapter() {
+    ) : BaseAdapter() {
 
         override fun getCount(): Int {
-            TODO("Not yet implemented")
+            return imgList.size
         }
 
         override fun getItem(position: Int): Any {
@@ -64,7 +61,8 @@ class CatalogueActivity : AppCompatActivity() {
         override fun getView(position: Int, p1: View?, viewGroup: ViewGroup?): View {
             var view = p1
             if (view == null)
-                view = LayoutInflater.from(context).inflate(R.layout.row_grid_item, viewGroup, false)
+                view =
+                    LayoutInflater.from(context).inflate(R.layout.row_grid_item, viewGroup, false)
             val imgView = view!!.findViewById<ImageView>(R.id.imgProduct)
             val tvProduct = view.findViewById<TextView>(R.id.txtProductName)
             val tvPrice = view.findViewById<TextView>(R.id.txtProductPrice)
