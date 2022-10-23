@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class RegisActivity : AppCompatActivity() {
@@ -69,12 +70,13 @@ class RegisActivity : AppCompatActivity() {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success")
                             val user = auth.currentUser
-                            updateUI(user)
+                            updateUI(user, name)
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:falure", task.exception)
-                            Snackbar.make(it, "Authentication failed.", Snackbar.LENGTH_SHORT).show()
-                            updateUI(null)
+                            Snackbar.make(it, "Authentication failed.", Snackbar.LENGTH_SHORT)
+                                .show()
+                            updateUI(null, null)
                         }
                     }
             }
@@ -116,10 +118,29 @@ class RegisActivity : AppCompatActivity() {
         tvFooter.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    private fun updateUI(currentUser: FirebaseUser?) {
+    private fun updateUI(currentUser: FirebaseUser?, name: String?) {
         if (currentUser != null) {
-            toCatalogue()
+            val profileUpdates = userProfileChangeRequest {
+                displayName = name
+            }
+
+            currentUser.updateProfile(profileUpdates)
+                .addOnCompleteListener {
+                    toCatalogue()
+                }
         }
+    }
+
+    private fun updateUsername(user: FirebaseUser?, name: String) {
+        val profileUpdates = userProfileChangeRequest {
+            displayName = name
+        }
+        user!!.updateProfile(profileUpdates)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "User profile updated.")
+                }
+            }
     }
 
     private fun toCatalogue() {
