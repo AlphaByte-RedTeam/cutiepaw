@@ -23,4 +23,9 @@
     <string name="back">Back</string>
     <string name="register">Register</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="hi">Hi,</string>
+    <string name="rp">Rp</string>
+    <string name="pawly_dog_food_dqp">Pawly - Dog Food DQP</string>
+    <string name="pet_food">pet food</string>
+    <string name="product_desc">Complete and balanced nutrition has antioxidants, vitamins and minerals to help maintain a healthy lifestyle.<br />Optimal levels of omega-6 fatty acid nourish the skin and help keep his coat shiny and healthy.<br />Whole grains and a special fiber blend support healthy digestion with a delicious roasted chicken flavor.<br />Unique, crunchy texture helps clean the teeth with every bite to support good oral health between brushings.<br />Proudly made in the USA with the world’s finest ingredients; contains no high fructose corn syrup, artificial flavors or sugar.</string>
 </resources>
